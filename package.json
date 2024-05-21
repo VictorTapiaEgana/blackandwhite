@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "jimp": "^0.22.12",
+    "nodemon": "^3.1.0",
+    "uuid": "^9.0.1"
+  },
+  "name": "deafio-black-and-white",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

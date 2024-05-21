@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Black and White Spa</title>
+</head>
+
+<body>
+    <h1>Black and White Spa</h1>
+
+    <form action="/procesarimagen" method="GET">
+        <label for="nombreImagen">Ingrese URL de la Imagen:</label>
+        <input type="text" name="nombreImagen" id="nombreImagen" placeholder="URL de la imagen">
+
+        <label for="selectImagenes">O seleccion una direccion pre-establecida</label>
+        <select id="selectImagenes" name="selectImagenes">
+
+            <option value= "none" selected disabled>Selecciona una imagen</option>
+            <option value= "https://img.freepik.com/free-photo/vertical-shot-wooden-passage-reflective-small-lake-mountain-range-horizon_181624-37099.jpg">Paisaje</option>
+            <option value= "https://i.blogs.es/8eaa43/goku-day-dragon-ball/1200_800.jpeg">Goku</option>
+            <option value= "https://static.toiimg.com/thumb/msid-38487484,width-748,height-499,resizemode=4,imgsize-264522/New-York-City.jpg" >Ciudad</option>
+            <option value= "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/a249096c7812deb8c3c2c907173f3774.jpe">One Piece</option>
+            <option value= "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg">Cara</option>
+
+          </select>
+        <button type="submit">Procesar Imagen</button>
+    </form>
+
+    <section>
+
+        <img class="imagen1" src="/assets/imgs/color.jpeg" width="400" alt="Imagen Original">
+        <img src="/assets/imgs/arrow.png"  width="100" alt="Flecha">
+        <img class="imagen1" src="/assets/imgs/gris.jpeg"  width="400" alt="Imagen Modificada">
+
+    </section>
+
+</body>
+
+</html>
