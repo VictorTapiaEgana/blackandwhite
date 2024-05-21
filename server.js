@@ -19,6 +19,10 @@ app.set('views', './views');
 
 app.use('/assets',express.static(path.join(process.cwd(),'public')));
 
+///////////  CARPETA TEMP VERCEL  //////////////////////////
+app.use(express.static(path.join(process.cwd(),'tmp')));
+////////////////////////////////////////////////////////////
+
 app.get('/',(req,res)=>{    
     res.sendFile(path.join(process.cwd(),'/pages/index.html'))    
 });
@@ -37,7 +41,21 @@ app.get('/procesarimagen',async (req,res)=>{
 
             const nombreNuevaImagen = `${uuid().slice(0,8)}.jpeg`;
 
-            const NuevaImagen = path.join(process.cwd(),`public/imagenes/${nombreNuevaImagen}`);    
+            // const NuevaImagen = path.join(process.cwd(),`public/imagenes/${nombreNuevaImagen}`);   
+
+
+
+
+            ////////////////////    PRUEBA VERCEL   ///////////////////
+            const NuevaImagen = path.join(process.cwd(),`/tmp${nombreNuevaImagen}`);
+            /////////////////// FIN PRUEBA VERCEL ///////////////////
+
+
+
+
+
+
+            
 
             const imagen = await Jimp.read( ImagenATransformar )
             
