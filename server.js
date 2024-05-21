@@ -43,22 +43,9 @@ app.get('/procesarimagen',async (req,res)=>{
             const nombreNuevaImagen = `${uuid().slice(0,8)}.jpeg`;
 
             // const NuevaImagen = path.join(process.cwd(),`public/imagenes/${nombreNuevaImagen}`);   
-
-
-
-
-            ////////////////////    PRUEBA VERCEL   ///////////////////
-            // const NuevaImagen = path.join(process.cwd(),`/tmp/${nombreNuevaImagen}`);+
-            const NuevaImagen = `/tmp/${nombreNuevaImagen}`
-            // console.log("Nombre Nueva Imagen: " + NuevaImagen)
-            /////////////////// FIN PRUEBA VERCEL ///////////////////
-
-
-
-
-
-
-            
+            ////////////////////    PRUEBA VERCEL   ///////////////////            
+            const NuevaImagen = `/tmp/${nombreNuevaImagen}`           
+            /////////////////// FIN PRUEBA VERCEL ///////////////////            
 
             const imagen = await Jimp.read( ImagenATransformar )
             
