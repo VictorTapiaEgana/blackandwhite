@@ -49,8 +49,8 @@ app.get('/procesarimagen',async (req,res)=>{
 
             ////////////////////    PRUEBA VERCEL   ///////////////////
             // const NuevaImagen = path.join(process.cwd(),`/tmp/${nombreNuevaImagen}`);+
-            const NuevaImagen = `/tmp/${nombreNuevaImagen}`+
-            console.log("Nombre Nueva Imagen: " + NuevaImagen)
+            const NuevaImagen = `/tmp/${nombreNuevaImagen}`
+            // console.log("Nombre Nueva Imagen: " + NuevaImagen)
             /////////////////// FIN PRUEBA VERCEL ///////////////////
 
 
