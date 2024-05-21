@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{> style }}
+    <title>Document</title>
+</head>
+   <body>            
+      <h1>Resultado imagenes Procesadas</h1>
+
+      <section >
+
+          <div>
+            <h2>Original</h2>
+              <img src="{{ imagenOriginal }}" style="max-width: 100%; height: auto;" alt="Imagen Original">
+          </div>
+          
+          <div class="div2">
+            <h2>Modificada</h2>
+              <img src="/assets/imagenes/{{ ImagenTransformada }}" alt="Imagen en escala de grises">
+              <strong>Nombre del Arhivo: {{ ImagenTransformada }}</strong>
+          </div>
+
+      </section>
+
+      
+      <form action="/" method="get">
+         <button type="submit" > Procesar nueva imagen</button>
+      </form>
+
+
+   
+  </body>
+</html>
