@@ -47,7 +47,7 @@ app.get('/procesarimagen',async (req,res)=>{
 
 
             ////////////////////    PRUEBA VERCEL   ///////////////////
-            const NuevaImagen = path.join(process.cwd(),`/tmp${nombreNuevaImagen}`);
+            const NuevaImagen = path.join(process.cwd(),`/tmp/${nombreNuevaImagen}`);
             /////////////////// FIN PRUEBA VERCEL ///////////////////
 
 
