@@ -20,7 +20,7 @@ app.set('views', './views');
 app.use('/assets',express.static(path.join(process.cwd(),'public')));
 
 ///////////  CARPETA TEMP VERCEL  //////////////////////////
-app.use(express.static(path.join(process.cwd(),'tmp')));
+app.use('/tmp',express.static(path.join(process.cwd(),'tmp')));
 ////////////////////////////////////////////////////////////
 
 app.get('/',(req,res)=>{    
@@ -47,7 +47,7 @@ app.get('/procesarimagen',async (req,res)=>{
 
 
             ////////////////////    PRUEBA VERCEL   ///////////////////
-            const NuevaImagen = path.join(process.cwd(),`/tmp/${nombreNuevaImagen}`);
+            const NuevaImagen = path.join(process.cwd(),`tmp/${nombreNuevaImagen}`);
             /////////////////// FIN PRUEBA VERCEL ///////////////////
 
 
