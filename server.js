@@ -9,7 +9,7 @@ const app = express();
 const hbs = create({ 
                    extname: '.hbs',   
                    layoutsDir:path.join(process.cwd(),'/views') ,
-                   partialsDir:path.join(process.cwd(),'/views/componentes') ,
+                   partialsDir:path.join(process.cwd(),'/views/componentes'),
                    defaultLayout:false
 });
 
@@ -21,7 +21,7 @@ app.use('/assets',express.static(path.join(process.cwd(),'public')));
 app.use('/tmp',express.static('/tmp'));
 
 app.get('/',(req,res)=>{       
-    res.render('index.hbs')
+    res.status(200).render('index.hbs')
 });
 
 app.get('/procesarimagen',async (req,res)=>{
@@ -46,20 +46,20 @@ app.get('/procesarimagen',async (req,res)=>{
                    .resize(350,Jimp.AUTO)
                    .writeAsync( NuevaImagen )
 
-                res.render('procesarimagen.hbs',{
+                res.status(200).render('procesarimagen.hbs',{
                      imagenOriginal:ImagenATransformar,
                      ImagenTransformada:nombreNuevaImagen
                 })
     }else{
         
         res.render('index.hbs',{
-            error:"Ingrese una ruta URL o seleccion una imagen"                   
+            error:"*Ingrese una ruta URL o seleccione una imagen"                   
         });
 
     }
 });
 
-app.listen(3010,()=>{
+app.listen(3005,()=>{
     console.clear()
     console.log(`Holiwis en puerto: 3010`)
 });

@@ -12,13 +12,13 @@
       <section >
 
           <div>
-            <h2>Original</h2>
-              <img src="{{ imagenOriginal }}" style="max-width: 100%; height: auto;" alt="Imagen Original">
+            <a href="{{ imagenOriginal }}" target="_blank" rel="noopener noreferrer"><h2>Original</h2></a>
+              <img class="imagen1" src="{{ imagenOriginal }}" style="max-width: 100%; height: auto;" alt="Imagen Original">
           </div>
           
           <div class="div2">
             <h2>Modificada</h2>              
-              <img src="/tmp/{{ ImagenTransformada }}" alt="Imagen en escala de grises">
+              <img class="imagen1" src="/tmp/{{ ImagenTransformada }}" alt="Imagen en escala de grises">
               <strong>Nombre del Arhivo: {{ ImagenTransformada }}</strong>
           </div>
 
