@@ -18,16 +18,10 @@ app.set('view engine', 'hbs');
 app.set('views', './views');
 
 app.use('/assets',express.static(path.join(process.cwd(),'public')));
-
-///////////////  CARPETA TEMP VERCEL  ///////////////////////
-// app.use('/tmp',express.static(path.join(process.cwd(),'/tmp')));
 app.use('/tmp',express.static('/tmp'));
-////////////////////////////////////////////////////////////
 
-app.get('/',(req,res)=>{    
-    // res.sendFile(path.join(process.cwd(),'/pages/index.html'))    
+app.get('/',(req,res)=>{       
     res.render('index.hbs')
-
 });
 
 app.get('/procesarimagen',async (req,res)=>{
@@ -44,11 +38,11 @@ app.get('/procesarimagen',async (req,res)=>{
 
             const nombreNuevaImagen = `${uuid().slice(0,8)}.jpeg`;            
             const NuevaImagen = `/tmp/${nombreNuevaImagen}`       
-            const imagen = await Jimp.read( ImagenATransformar )
+            const imagen = await Jimp.read( ImagenATransformar );
             
               await imagen         
                    .grayscale()
-                   .quality(100)
+                   .quality(60)
                    .resize(350,Jimp.AUTO)
                    .writeAsync( NuevaImagen )
 
@@ -57,11 +51,9 @@ app.get('/procesarimagen',async (req,res)=>{
                      ImagenTransformada:nombreNuevaImagen
                 })
     }else{
-
-        //   res.status(400).send('Datos incompletos')
+        
         res.render('index.hbs',{
-            error:"Ingrese una ruta URL o seleccion una imagen"
-                   
+            error:"Ingrese una ruta URL o seleccion una imagen"                   
         });
 
     }
