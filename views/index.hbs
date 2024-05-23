@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>Black and White Spa</title>
+    {{> index }}
 </head>
 
 <body>
@@ -17,6 +18,7 @@
         <input type="text" name="nombreImagen" id="nombreImagen" placeholder="URL de la imagen">
 
         <label for="selectImagenes">O seleccion una direccion pre-establecida</label>
+
         <select id="selectImagenes" name="selectImagenes">
 
             <option value= "none" selected disabled>Selecciona una imagen</option>
@@ -26,7 +28,13 @@
             <option value= "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/a249096c7812deb8c3c2c907173f3774.jpe">One Piece</option>            
 
           </select>
+
+        {{#if error}}
+            <small>{{ error }}</small>
+        {{/if}}
+
         <button type="submit">Procesar Imagen</button>
+        
     </form>
 
     <section>

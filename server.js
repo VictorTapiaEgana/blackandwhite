@@ -25,7 +25,9 @@ app.use('/tmp',express.static('/tmp'));
 ////////////////////////////////////////////////////////////
 
 app.get('/',(req,res)=>{    
-    res.sendFile(path.join(process.cwd(),'/pages/index.html'))    
+    // res.sendFile(path.join(process.cwd(),'/pages/index.html'))    
+    res.render('index.hbs')
+
 });
 
 app.get('/procesarimagen',async (req,res)=>{
@@ -40,13 +42,8 @@ app.get('/procesarimagen',async (req,res)=>{
         ? ImagenATransformar = nombreImagen 
         : ImagenATransformar = selectImagenes;
 
-            const nombreNuevaImagen = `${uuid().slice(0,8)}.jpeg`;
-
-            // const NuevaImagen = path.join(process.cwd(),`public/imagenes/${nombreNuevaImagen}`);   
-            ////////////////////    PRUEBA VERCEL   ///////////////////            
-            const NuevaImagen = `/tmp/${nombreNuevaImagen}`           
-            /////////////////// FIN PRUEBA VERCEL ///////////////////            
-
+            const nombreNuevaImagen = `${uuid().slice(0,8)}.jpeg`;            
+            const NuevaImagen = `/tmp/${nombreNuevaImagen}`       
             const imagen = await Jimp.read( ImagenATransformar )
             
               await imagen         
@@ -61,7 +58,11 @@ app.get('/procesarimagen',async (req,res)=>{
                 })
     }else{
 
-          res.status(400).send('Datos incompletos')
+        //   res.status(400).send('Datos incompletos')
+        res.render('index.hbs',{
+            error:"Ingrese una ruta URL o seleccion una imagen"
+                   
+        });
 
     }
 });

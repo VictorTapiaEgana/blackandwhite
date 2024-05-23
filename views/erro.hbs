@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black and White Spa</title>
+     {{> style }}
+</head>
+<body>
+       {{#if error}}
+            <h1>{{error}}</h1>
+       {{/if}}
+        
+      <form action="/" method="get">
+         <button type="submit" > Procesar nueva imagen</button>
+      </form>
+
+    
+</body>
+</html>
