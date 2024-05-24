@@ -36,8 +36,10 @@ app.get('/procesarimagen',async (req,res)=>{
         ? ImagenATransformar = nombreImagen 
         : ImagenATransformar = selectImagenes;
 
-            const nombreNuevaImagen = `${uuid().slice(0,8)}.jpeg`;            
-            const NuevaImagen = `/tmp/${nombreNuevaImagen}`       
+            const nombreNuevaImagen = `${uuid().slice(0,8)}.jpeg`;
+                       
+            const NuevaImagen = `/tmp/${nombreNuevaImagen}`  
+                 
             const imagen = await Jimp.read( ImagenATransformar );
             
               await imagen         
@@ -61,5 +63,5 @@ app.get('/procesarimagen',async (req,res)=>{
 
 app.listen(3005,()=>{
     console.clear()
-    console.log(`Holiwis en puerto: 3010`)
+    console.log(`Holiwis en puerto: 3005`)
 });
